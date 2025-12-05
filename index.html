@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liquid Glass Christmas Downloads</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+    margin:0;
+    font-family:'Montserrat',sans-serif;
+    background: linear-gradient(to bottom,#0d1b2a,#1b263b);
+    color:#fff;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+/* Header */
+header {
+    text-align:center;
+    padding:50px 20px 20px;
+}
+header h1 {
+    font-size:3em;
+    color:#00d4ff;
+    text-shadow:0 0 15px #00f0ff,0 0 30px #00aaff;
+    margin-bottom:10px;
+}
+header p {
+    font-size:1.2em;
+    color:#cceeff;
+    text-shadow:0 0 8px #00aaff;
+}
+
+/* Download container */
+.download-container {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    width:90%;
+    max-width:1200px;
+    margin:50px auto;
+    padding:20px;
+}
+
+/* Liquid Glass Panel */
+.download-panel {
+    position:relative;
+    padding:30px;
+    border-radius:25px;
+    background: rgba(0,128,255,0.25);
+    border:1px solid rgba(255,255,255,0.2);
+    backdrop-filter:blur(20px) saturate(200%);
+    -webkit-backdrop-filter:blur(20px) saturate(200%);
+    box-shadow:0 15px 40px rgba(0,0,0,0.35);
+    overflow:hidden;
+    cursor:pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.download-panel::before {
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    pointer-events:none;
+    background:radial-gradient(circle at var(--x,50%) var(--y,50%),rgba(255,255,255,0.2),transparent 70%);
+    transition: background 0.2s ease;
+}
+.download-panel:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+.download-panel h2 {
+    font-size:1.6em;
+    color:#a0e0ff;
+    margin-bottom:15px;
+}
+.download-panel p {
+    font-size:1em;
+    margin-bottom:20px;
+    color:#e0f7ff;
+}
+
+/* Download Button */
+.download-btn {
+    position:relative;
+    display:inline-block;
+    padding:15px 35px;
+    font-size:1em;
+    font-weight:bold;
+    color:#fff;
+    background: rgba(0,180,255,0.25);
+    border:1px solid rgba(255,255,255,0.3);
+    border-radius:20px;
+    backdrop-filter:blur(10px) saturate(180%);
+    -webkit-backdrop-filter:blur(10px) saturate(180%);
+    cursor:pointer;
+    text-decoration:none;
+    overflow:hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.download-btn::before {
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: radial-gradient(circle at var(--bx,50%) var(--by,50%), rgba(255,255,255,0.3), transparent 70%);
+    pointer-events:none;
+    transition: background 0.2s ease;
+}
+.download-btn:hover {
+    transform: scale(1.1);
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    background: rgba(0,180,255,0.4);
+}
+
+/* Footer */
+footer {
+    text-align:center;
+    padding:20px 0;
+    color:#cceeff;
+    font-size:0.9em;
+    border-top:1px solid rgba(255,255,255,0.2);
+    width:100%;
+}
+
+/* Snowflakes */
+.snowflake {
+    position:fixed;
+    top:-10px;
+    color:#fff;
+    font-size:6px;
+    user-select:none;
+    pointer-events:none;
+    z-index:1000;
+    opacity:0.8;
+    animation-name:fall;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+@keyframes fall {
+    0% { transform:translateY(-10px);}
+    100% { transform:translateY(110vh);}
+}
+
+/* Apple-like bottom taskbar */
+.taskbar {
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:25px;
+    padding:10px 20px;
+    border-radius:25px;
+    background: rgba(0,128,255,0.25);
+    border:1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(15px) saturate(200%);
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    z-index:50;
+}
+.taskbar a {
+    width:60px;
+    height:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:15px;
+    background: rgba(0,180,255,0.25);
+    border:1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px) saturate(180%);
+    cursor:pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position:relative;
+}
+.taskbar a:hover {
+    transform: scale(1.2);
+    background: rgba(0,180,255,0.4);
+    box-shadow:0 5px 20px rgba(0,0,0,0.5);
+}
+.taskbar a::before {
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    border-radius:15px;
+    background: radial-gradient(circle at var(--dx,50%) var(--dy,50%), rgba(255,255,255,0.3), transparent 70%);
+    pointer-events:none;
+    transition: background 0.2s ease;
+}
+.taskbar svg {
+    width:30px;
+    height:30px;
+    z-index:1;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Merry Christmas! From Engine6.0!!!!</h1>
+    <p>Download your festive goodies below 🎄❄️</p>
+</header>
+
+<div class="download-container">
+    <!-- Panels -->
+    <div class="download-panel">
+        <h2>Advanced system checker</h2>
+        <p>High-quality for your devices.</p>
+        <a href="https://gofile.io/d/WMiJyJ" class="download-btn" target="_blank">Download</a>
+    </div>
+    <div class="download-panel">
+        <h2>Boosterx</h2>
+        <p>advanced system optmoizer.</p>
+        <a href="https://duckehas.github.io/BOOSTERX/" class="download-btn" target="_blank">Download</a>
+    </div>
+    <div class="download-panel">
+        <h2>Temporary Spoofer</h2>
+        <p>WORKS FOR ALMOST ALL ANTI CHEATS</p>
+        <a href="https://gofile.io/d/wQrYDx" class="download-btn" target="_blank">Download</a>
+    </div>
+    <div class="download-panel">
+        <h2>PERM SPOOF</h2>
+        <p>WORKS FOR ALMOST ALL ANTI CHEATS</p>
+        <a href="https://gofile.io/d/KNXVl5" class="download-btn" target="_blank">Download</a>
+    </div>
+    <div class="download-panel">
+        <h2>PERM SPOOFER WITH CUSTOM UI</h2>
+        <p>WORKS FOR ALMOST ALL ANTI CHEATS</p>
+        <a href="https://gofile.io/d/YkB6kX" class="download-btn" target="_blank">Download</a>
+    </div>
+    <div class="download-panel">
+        <h2>COMING SOON</h2>
+        <p>More Christmas magic incoming...</p>
+        <a href="#" class="download-btn" target="_blank">Download</a>
+    </div>
+</div>
+
+<footer>
+    &copy; Engine6.0. All Rights Reserved.
+</footer>
+
+<!-- Apple-like Taskbar Bottom -->
+<div class="taskbar">
+    <a href="#" title="Blank 1">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="rgba(255,255,255,0.2)"/></svg>
+    </a>
+    <a href="#" title="Blank 2">
+        <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" fill="rgba(255,255,255,0.2)"/></svg>
+    </a>
+    <a href="#" title="Blank 3">
+        <svg viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22" fill="rgba(255,255,255,0.2)"/></svg>
+    </a>
+    <a href="#" title="Blank 4">
+        <svg viewBox="0 0 24 24"><path d="M12 2 L22 12 L12 22 L2 12 Z" fill="rgba(255,255,255,0.2)"/></svg>
+    </a>
+
+    <!-- Discord -->
+    <a href="https://discord.gg/kDEeBZBWVf" target="_blank" title="Discord">
+        <svg viewBox="0 0 71 55" width="30" height="30">
+            <path fill="#7289DA" d="M60.104 4.552a58.5 58.5 0 00-14.087-4.375.068.068 0 00-.072.034c-.608 1.103-1.287 2.554-1.764 3.684-5.21-.783-10.412-.783-15.555 0-.477-1.13-1.155-2.581-1.763-3.684a.067.067 0 00-.072-.034A58.472 58.472 0 00.897 4.552a.06.06 0 00-.026.023C-.324 18.452.565 32.28 3.19 45.866a.075.075 0 00.028.05 58.952 58.952 0 0017.96 9.083.069.069 0 00.076-.027c1.38-1.897 2.612-3.891 3.683-5.934a.066.066 0 00-.037-.092c-1.968-.945-3.843-2.056-5.637-3.33a.068.068 0 01-.007-.113c.38-.284.76-.574 1.136-.862a.063.063 0 01.066-.005c11.29 5.172 23.48 5.172 34.693 0a.064.064 0 01.068.006c.376.288.757.578 1.136.862a.069.069 0 01-.006.112c-1.797 1.275-3.673 2.386-5.64 3.33a.066.066 0 00-.036.092c1.07 2.042 2.303 4.036 3.683 5.934a.068.068 0 00.076.027 58.88 58.88 0 0017.96-9.083.074.074 0 00.028-.05c2.63-13.594 3.523-27.431 2.324-41.291a.061.061 0 00-.025-.023zM23.725 37.342c-3.19 0-5.813-2.932-5.813-6.546 0-3.613 2.576-6.545 5.813-6.545 3.25 0 5.85 2.943 5.813 6.545 0 3.614-2.576 6.546-5.813 6.546zm23.55 0c-3.19 0-5.813-2.932-5.813-6.546 0-3.613 2.576-6.545 5.813-6.545 3.25 0 5.85 2.943 5.813 6.545 0 3.614-2.563 6.546-5.813 6.546z"/>
+        </svg>
+    </a>
+
+    <!-- Shop -->
+    <a href="https://example.com/shop" target="_blank" title="Shop">
+        <svg viewBox="0 0 24 24" width="30" height="30">
+            <path fill="#00d4ff" d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.16 14l-.84-4h12.44l1.5-6H5V2H2v2h2l3.6 7.59-1.35 2.44C5.16 14.37 5 14.68 5 15c0 1.1.9 2 2 2h12v-2H7.16z"/>
+        </svg>
+    </a>
+</div>
+
+<script>
+// Snowflakes
+const snowflakeCount=300;
+for(let i=0;i<snowflakeCount;i++){
+    const snowflake=document.createElement('div');
+    snowflake.classList.add('snowflake');
+    snowflake.style.left=Math.random()*window.innerWidth+'px';
+    snowflake.style.fontSize=(Math.random()*8+4)+'px';
+    snowflake.style.opacity=Math.random();
+    snowflake.innerHTML='❄';
+    document.body.appendChild(snowflake);
+    const duration=Math.random()*10+5;
+    const drift=Math.random()*100-50;
+    snowflake.animate([{transform:`translate(0px,-10px)`},{transform:`translate(${drift}px,${window.innerHeight+10}px)`}],{duration:duration*1000,iterations:Infinity,easing:'linear'});
+}
+
+// Hover effects
+document.querySelectorAll('.download-panel').forEach(panel=>{
+    panel.addEventListener('mousemove',e=>{
+        const rect=panel.getBoundingClientRect();
+        panel.style.setProperty('--x',((e.clientX-rect.left)/rect.width)*100+'%');
+        panel.style.setProperty('--y',((e.clientY-rect.top)/rect.height)*100+'%');
+    });
+    panel.addEventListener('mouseleave',()=>{panel.style.setProperty('--x','50%'); panel.style.setProperty('--y','50%');});
+});
+document.querySelectorAll('.download-btn').forEach(btn=>{
+    btn.addEventListener('mousemove',e=>{
+        const rect=btn.getBoundingClientRect();
+        btn.style.setProperty('--bx',((e.clientX-rect.left)/rect.width)*100+'%');
+        btn.style.setProperty('--by',((e.clientY-rect.top)/rect.height)*100+'%');
+    });
+    btn.addEventListener('mouseleave',()=>{btn.style.setProperty('--bx','50%'); btn.style.setProperty('--by','50%');});
+});
+document.querySelectorAll('.taskbar a').forEach(btn=>{
+    btn.addEventListener('mousemove',e=>{
+        const rect=btn.getBoundingClientRect();
+        btn.style.setProperty('--dx',((e.clientX-rect.left)/rect.width)*100+'%');
+        btn.style.setProperty('--dy',((e.clientY-rect.top)/rect.height)*100+'%');
+    });
+    btn.addEventListener('mouseleave',()=>{btn.style.setProperty('--dx','50%'); btn.style.setProperty('--dy','50%');});
+});
+
+// Security
+document.addEventListener("contextmenu", e => e.preventDefault());
+history.pushState(null, null, location.href);
+window.onpopstate = function () { history.go(1); };
+document.addEventListener("keydown", function(e) {
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key)) || (e.ctrlKey && e.key === "U")) e.preventDefault();
+});
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("selectstart", e => e.preventDefault());
+</script>
+
+</body>
+</html>
